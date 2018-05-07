@@ -6,144 +6,531 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="../../test.js"></script>-->
-    
-    <script type="text/javascript" src="../../index.js"></script>
-    
-
-    <style>
+  
+      <style>
         .basic {margin-bottom: 20px;}
     body {padding-bottom: 60px;
         padding-left: 40px;}
     #final {margin-top: 20px;}
+#match {background-color: red;
+        display: none;
+        font-size: 115%;
+        font-weight: bold;
+        height: 200px;
+        line-height: 80px;
+        margin-left: 440px;
+        margin-top: 180px;
+        
+        position: fixed;
+        text-align: center;
+        width: 200px;
+}
+
+
     .pick {visibility: hidden;
             width: 25px;}
+#resultImage {
+        display: none;
+        height: 100px;
+        margin-left: 490px;
+        margin-top: 420px;
+        position: fixed;
+        width: 100px;
+}
     ul {display: none;}
     </style>
     <title>Go get your fuckin' shinebox</title>
     
 </head>
 <body>
-    <h3>Survey Questions</h3>
+                <div id="match">
+        
+                        </div>
+                        <img id="resultImage">
+    <h3>Rate the following movies to find friends with similar taste!</h3>
     <hr>
     <h4>About You</h4>
     <h6>Name (Required)</h6>
     <input class="basic" id="handle" type="text">
     <h6>Link to Photo Image (Required)</h6>
-    <input class="basic" id="photo" type="text">
+    <input class="form-control-file" id="photo" type="file">
     <hr>
-    <h4>Question One</h4>
-    <p>insert question here</p>
+    <h4>Back to the Future</h4>
     <button class="answers" id="first">Select an Option &#9660;</button>
     <input class="pick" id="ichi" type="text">
     <ul id="firstlist">
-            <li class="one" data-option="1">1 (Strongly Disagree)</li>
+            <li class="one" data-option="1">1 (Hate It)</li>
             <li class="one" data-option="2">2</li>
             <li class="one" data-option="3">3</li>
             <li class="one" data-option="4">4</li>
-            <li class="one" data-option="5">5 (Strongly Agree)</li>
+            <li class="one" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Two</h4>
-    <p>insert question here</p>
+    <h4>Blade Runner</h4>
+    
     <button class="answers" id="second">Select an Option &#9660;</button>
     <input class="pick" id="ni" type="text">
     <ul id="secondlist">
-            <li class="two" data-option="1">1 (Strongly Disagree)</li>
+            <li class="two" data-option="1">1 (Hate It)</li>
             <li class="two" data-option="2">2</li>
             <li class="two" data-option="3">3</li>
             <li class="two" data-option="4">4</li>
-            <li class="two" data-option="5">5 (Strongly Agree)</li>
+            <li class="two" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Three</h4>
-    <p>insert question here</p>
+    <h4>Legally Blonde</h4>
     <button class="answers" id="third">Select an Option &#9660;</button>
     <input class="pick" id="san" type="text">
     <ul id="thirdlist">
-            <li class="three" data-option="1">1 (Strongly Disagree)</li>
+            <li class="three" data-option="1">1 (Hate It)</li>
             <li class="three" data-option="2">2</li>
             <li class="three" data-option="3">3</li>
             <li class="three" data-option="4">4</li>
-            <li class="three" data-option="5">5 (Strongly Agree)</li>
+            <li class="three" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Four</h4>
-    <p>insert question here</p>
+    <h4>The Avengers</h4>
     <button class="answers" id="fourth">Select an Option &#9660;</button>
     <input class="pick" id="shi" type="text">
     <ul id="fourthlist">
-            <li class="four" data-option="1">1 (Strongly Disagree)</li>
+            <li class="four" data-option="1">1 (Hate It)</li>
             <li class="four" data-option="2">2</li>
             <li class="four" data-option="3">3</li>
             <li class="four" data-option="4">4</li>
-            <li class="four" data-option="5">5 (Strongly Agree)</li>
+            <li class="four" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Five</h4>
-    <p>insert question here</p>
+    <h4>The Dark Knight</h4>
     <button class="answers" id="fifth">Select an Option &#9660;</button>
     <input class="pick" id="go" type="text">
     <ul id="fifthlist">
-            <li class="five" data-option="1">1 (Strongly Disagree)</li>
+            <li class="five" data-option="1">1 (Hate It)</li>
             <li class="five" data-option="2">2</li>
             <li class="five" data-option="3">3</li>
             <li class="five" data-option="4">4</li>
-            <li class="five" data-option="5">5 (Strongly Agree)</li>
+            <li class="five" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Six</h4>
-    <p>insert question here</p>
+    <h4>The Devil Wears Prada</h4>
     <button class="answers" id="sixth">Select an Option &#9660;</button>
     <input class="pick" id="roku" type="text">
     <ul id="sixthlist">
-            <li class="six" data-option="1">1 (Strongly Disagree)</li>
+            <li class="six" data-option="1">1 (Hate It)</li>
             <li class="six" data-option="2">2</li>
             <li class="six" data-option="3">3</li>
             <li class="six" data-option="4">4</li>
-            <li class="six" data-option="5">5 (Strongly Agree)</li>
+            <li class="six" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Seven</h4>
-    <p>insert question here</p>
+    <h4>The Godfather</h4>
     <button class="answers" id="seventh">Select an Option &#9660;</button>
     <input class="pick" id="nana" type="text">
     <ul id="seventhlist">
-            <li class="seven" data-option="1">1 (Strongly Disagree)</li>
+            <li class="seven" data-option="1">1 (Hate It)</li>
             <li class="seven" data-option="2">2</li>
             <li class="seven" data-option="3">3</li>
             <li class="seven" data-option="4">4</li>
-            <li class="seven" data-option="5">5 (Strongly Agree)</li>
+            <li class="seven" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Eight</h4>
-    <p>insert question here</p>
+    <h4>The Shape of Water</h4>
     <button class="answers" id="eighth">Select an Option &#9660;</button>
     <input class="pick" id="hachi" type="text">
     <ul id="eighthlist">
-            <li class="eight" data-option="1">1 (Strongly Disagree)</li>
+            <li class="eight" data-option="1">1 (Hate It)</li>
             <li class="eight" data-option="2">2</li>
             <li class="eight" data-option="3">3</li>
             <li class="eight" data-option="4">4</li>
-            <li class="eight" data-option="5">5 (Strongly Agree)</li>
+            <li class="eight" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Nine</h4>
-    <p>insert question here</p>
+    <h4>The Terminator</h4>
     <button class="answers" id="ninth">Select an Option &#9660;</button>
     <input class="pick" id="ku" type="text">
     <ul id="ninthlist">
-            <li class="nine" data-option="1">1 (Strongly Disagree)</li>
+            <li class="nine" data-option="1">1 (Hate It)</li>
             <li class="nine" data-option="2">2</li>
             <li class="nine" data-option="3">3</li>
             <li class="nine" data-option="4">4</li>
-            <li class="nine" data-option="5">5 (Strongly Agree)</li>
+            <li class="nine" data-option="5">5 (Love It)</li>
     </ul>
-    <h4>Question Ten</h4>
-    <p>insert question here</p>
+    <h4>The Wizard of Oz</h4>
 
     <button class="answers" id="tenth">Select an Option &#9660;</button>
     <input class="pick" id="ju" type="text">
     <ul id="tenthlist">
-            <li class="ten" data-option="1">1 (Strongly Disagree)</li>
+            <li class="ten" data-option="1">1 (Hate It)</li>
             <li class="ten" data-option="2">2</li>
             <li class="ten" data-option="3">3</li>
             <li class="ten" data-option="4">4</li>
-            <li class="ten" data-option="5">5 (Strongly Agree)</li>
+            <li class="ten" data-option="5">5 (Love It)</li>
     </ul>
     <br>
     <button id="final" type="submit">Submit!</button>
+
+
 </body>
+<script>
+        $(document).ready(function(){
+
+
+
+
+
+
+
+
+$("#first").on("click", function() { show($("#firstlist"), $("#ichi"));});
+$("#second").on("click", function() { show($("#secondlist"), $("#ni"));});
+$("#third").on("click", function() { show($("#thirdlist"), $("#san"));});
+$("#fourth").on("click", function() { show($("#fourthlist"), $("#shi"));});
+$("#fifth").on("click", function() { show($("#fifthlist"), $("#go"));});
+$("#sixth").on("click", function() { show($("#sixthlist"), $("#roku"));});
+$("#seventh").on("click", function() { show($("#seventhlist"), $("#nana"));});
+$("#eighth").on("click", function() { show($("#eighthlist"), $("#hachi"));});
+$("#ninth").on("click", function() { show($("#ninthlist"), $("#ku"));});
+$("#tenth").on("click", function() { show($("#tenthlist"), $("#ju"));});
+$(".one").on("click", function() { hide($("#firstlist"));});
+$(".two").on("click", function() { hide($("#secondlist"));});
+$(".three").on("click", function() { hide($("#thirdlist"));});
+$(".four").on("click", function() { hide($("#fourthlist"));});
+$(".five").on("click", function() { hide($("#fifthlist"));});
+$(".six").on("click", function() { hide($("#sixthlist"));});
+$(".seven").on("click", function() { hide($("#seventhlist"));});
+$(".eight").on("click", function() { hide($("#eighthlist"));});
+$(".nine").on("click", function() { hide($("#ninthlist"));});
+$(".ten").on("click", function() { hide($("#tenthlist"));});
+$(".ten").on("click", dix);
+$(".nine").on("click", neuf);
+$(".eight").on("click", huit);
+$(".seven").on("click", sept);
+$(".six").on("click", six);
+$(".five").on("click", cinq);
+$(".four").on("click", quatre);
+$(".three").on("click", trois);
+$(".two").on("click", deux);
+$(".one").on("click", un);
+
+$("#final").on("click", you);
+
+var dummy = [];
+
+var friendScore;
+
+
+
+var differences = [];
+
+var christopher = {
+    name: "Christopher",
+    photo: "http://www.unitedagents.co.uk/sites/default/files/thumbnails/image/guy-2.jpg",
+    scores: [5, 4, 3, 3, 3, 3, 5, 3, 1, 4]
+};
+
+var frances = {
+    name: "Frances",
+    photo: "https://cbsnews2.cbsistatic.com/hub/i/r/2017/05/11/759f70c0-804e-4afa-8493-f80fc1b09ab3/thumbnail/620x350/f1625b916682d938a132af464524193a/istock-526142422.jpg",
+    scores: [5, 1, 1, 3, 4, 4, 4, 2, 3, 1] 
+};
+
+var margot = {
+    name: "Margot",
+    photo: "https://gdb.rferl.org/4D76BCB5-0345-4949-AA54-69B220572B1B_w1023_r1_s.jpg",
+    scores: [4, 1, 3, 5, 4, 3, 4, 3, 1, 1]
+};
+
+var meryl = {
+    name: "Meryl",
+    photo: "https://theproductivewoman.com/wp-content/uploads/sites/26/2017/12/CourtneyCarver52017.jpg",
+    scores: [5, 1, 1, 1, 5, 2, 5, 5, 3, 4] 
+};
+
+var richard = {
+    name: "Richard",
+    photo: "https://dynamicmedia.zuza.com/zz/m/original_/6/d/6dc7d122-3267-4ac4-b645-8de0aa298283/B822082215Z.1_20150928105208_000_G191GTG38.14_Gallery.jpg",
+    scores: [4, 1, 1, 3, 3, 1, 5, 3, 5, 4]
+};
+
+var sally = {
+    name: "Sally",
+    photo: "https://www-images.christianitytoday.com/images/81494.jpg?w=700",
+    scores: [2, 1, 5, 2, 2, 2, 1, 2, 2, 5] 
+};
+
+var sam = {
+    name: "Sam",
+    photo: "http://theanalysisofdata.com/gl/glebanon.png",
+    scores: [3, 2, 4, 1, 1, 1, 1, 5, 1, 4]
+};
+
+var saoirse = {
+    name: "Saoirse",
+    photo: "https://s-i.huffpost.com/gen/1840355/images/n-PUNK-WOMAN-628x314.jpg",
+    scores: [2, 1, 1, 2, 2, 4, 1, 5, 4, 4] 
+};
+
+var willem = {
+    name: "Willem",
+    photo: "https://www.nzaf.org.nz/assets/ee-uploads/cache/6e456c4c746cba65/Guy-sample_376_268_s_c1.jpg",
+    scores: [1, 2, 3, 2, 2, 2, 1, 2, 3, 2]
+};
+
+var woody = {
+    name: "Woody",
+    photo: "https://mms.businesswire.com/media/20180109005535/en/633865/5/GS_launch_image1_6_18.jpg",
+    scores: [5, 5, 5, 5, 5, 3, 3, 5, 5, 4] 
+};
+var currentURL = window.location.origin;
+
+var characters = [christopher, frances, margot, meryl, richard, sally, sam, saoirse, willem, woody];
+var profile;
+
+function getSum(total, num) {
+    return total + num;
+}
+
+function scoreSet() {
+        for (i = 0; i < characters.length; i++) {
+                dummy.push(characters[i].scores.reduce(getSum));
+        }
+        
+}
+
+
+
+scoreSet();
+
+
+
+function you() {
+    if ($("#handle").val() == "" || $("#photo").val() == "" || $("#ichi").val() == "" || $("#ni").val() == "" || $("#san").val() == "" || $("#shi").val() == "" || $("#go").val() == "" || $("#roku").val() == "" || $("#nana").val() == "" || $("#hachi").val() == "" || $("#ku").val() == "" || $("#ju").val() == "") {
+        alert("Please Fill Out All Required Fields");
+    }
+
+    else {
+
+
+setTimeout(function() { $("#match").css("display", "block"); }, 1975);
+setTimeout(function() { $("#resultImage").css("display", "block"); }, 1975);
+
+setTimeout(function() { $("#match").css("display", "none"); }, 6975);
+
+setTimeout(function() { $("#resultImage").css("display", "none"); }, 6975);
+
+ 
+    
+         profile = 
+    {
+      name: $("#handle").val(),
+      photo: $("#photo").val(),
+      scores: [$("#ichi").val(), $("#ni").val(), $("#san").val(), $("#shi").val(), $("#go").val(), $("#roku").val(), $("#nana").val(), $("#hachi").val(), $("#ku").val(), $("#ju").val()]
+    }
+    ;
+    $.post(currentURL + "/api/friends", profile, function (data) {
+                   
+                });
+
+characters.push(profile);
+
+
+
+
+
+setTimeout(function() { master(); }, 975);
+
+
+
+add(parseInt(profile.scores[0]), parseInt(profile.scores[1]), parseInt(profile.scores[2]), parseInt(profile.scores[3]), parseInt(profile.scores[4]), parseInt(profile.scores[5]), parseInt(profile.scores[6]), parseInt(profile.scores[7]), parseInt(profile.scores[8]), parseInt(profile.scores[9]));
+
+    }
+}
+
+
+function dix() {
+    
+var a = ($(this).attr("data-option"));
+
+$("#ju").val(a);
+
+}
+function neuf() {
+    
+    var a = ($(this).attr("data-option"));
+    
+    $("#ku").val(a);
+    
+    }
+    function huit() {
+    
+        var a = ($(this).attr("data-option"));
+        
+        $("#hachi").val(a);
+        
+        }
+        function sept() {
+    
+            var a = ($(this).attr("data-option"));
+            
+            $("#nana").val(a);
+            
+            }
+            function six() {
+    
+                var a = ($(this).attr("data-option"));
+                
+                $("#roku").val(a);
+                
+                }
+                function cinq() {
+    
+                    var a = ($(this).attr("data-option"));
+                    
+                    $("#go").val(a);
+                    
+                    }
+                    function quatre() {
+    
+                        var a = ($(this).attr("data-option"));
+                        
+                        $("#shi").val(a);
+                        
+                        }
+                        function trois() {
+    
+                            var a = ($(this).attr("data-option"));
+                            
+                            $("#san").val(a);
+                            
+                            }
+                            function deux() {
+    
+                                var a = ($(this).attr("data-option"));
+                                
+                                $("#ni").val(a);
+                                
+                                }
+                                function un() {
+    
+                                    var a = ($(this).attr("data-option"));
+                                    
+                                    $("#ichi").val(a);
+                                    
+                                    }
+
+
+function show(x, y) {
+    x.css("display", "block");
+    y.css("visibility", "visible");
+    
+}
+
+function hide(x) {
+    x.css("display", "none");
+    }
+
+function add(a, b, c, d, e, f, g, h, i, j) {
+ friendScore = a + b + c + d + e + f + g + h + i + j;
+}
+
+function master() {
+        for (i = 0; i < dummy.length; i++) {
+ math(friendScore, dummy[i]);
+
+ }
+
+var minimal = Math.min(...differences);
+
+dummy.push(friendScore);
+
+
+
+switch (minimal) {
+        case differences[0]:
+
+        $("#match").html("Your match is"  + "<br>" + characters[0].name);     
+        $("#resultImage").attr("src", characters[0].photo);   
+       
+    break;
+    case differences[1]:
+    $("#match").html("Your match is"  + "<br>" + characters[1].name);  
+    $("#resultImage").attr("src", characters[1].photo);
+    break;
+    case differences[2]:
+    $("#match").html("Your match is"  + "<br>" + characters[2].name);  
+    $("#resultImage").attr("src", characters[2].photo);
+    break;
+    case differences[3]:
+
+$("#match").html("Your match is"  + "<br>" + characters[3].name);    
+$("#resultImage").attr("src", characters[3].photo);   
+
+break;
+case differences[4]:
+
+$("#match").html("Your match is"  + "<br>" + characters[4].name);      
+$("#resultImage").attr("src", characters[4].photo);   
+
+break;
+case differences[5]:
+
+$("#match").html("Your match is"  + "<br>" + characters[5].name);     
+$("#resultImage").attr("src", characters[5].photo);   
+
+break;
+case differences[6]:
+
+$("#match").html("Your match is"  + "<br>" + characters[6].name);    
+$("#resultImage").attr("src", characters[6].photo);   
+
+break;
+case differences[7]:
+
+$("#match").html("Your match is"  + "<br>" + characters[7].name);      
+$("#resultImage").attr("src", characters[7].photo);   
+
+break;
+case differences[8]:
+
+$("#match").html("Your match is"  + "<br>" + characters[8].name);      
+$("#resultImage").attr("src", characters[8].photo);   
+
+break;
+case differences[9]:
+
+$("#match").html("Your match is"  + "<br>" + characters[9].name);      
+$("#resultImage").attr("src", characters[9].photo);   
+
+break;
+  default:
+    console.log("no matches");
+}
+
+
+}
+
+function math(x, y) {
+var operation;
+
+    if (x < y) {
+        operation = y - x;
+        
+        
+       
+    }
+    else if (x > y) {
+        operation = x - y;
+        
+        
+
+    }
+
+    else {
+        operation = 0;
+        
+
+    }
+
+   differences.push(operation);
+ 
+
+}
+
+
+
+
+});
+
+</script>
 </html>

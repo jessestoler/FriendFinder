@@ -1,44 +1,46 @@
-var userinfoJSON = {};
+var friends = require('../data/friends.js');
 
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
+module.exports = function (app) {
+    app.get('/api/friends', function (req, res) {
+        res.json(friends);
+    });
 
+    app.post('/api/friends', function (req, res) {
+        let newFriend = req.body;
 
-var app = express();
-var PORT = process.env.PORT || 3000;
+        
 
+        let friendMatch = {};
 
+        for (let i = 0; i < newFriend.scores.length; i++) {
+            newFriend.scores[i] = parseInt(newFriend.scores[i]);
+            }
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+        let bestMatchIndex = 0;
 
-var johnny = {
-    one: "fuck",
-    two: "this",
-    three: "shit"
-}
-  
+        let bestMatchDifference = 40;
 
+        for (let i = 0; i < friends.length; i++) {
+            let totalDifference = 0;
 
+            for (let j = 0; j < friends[i].scores.length; j++) {
+                let differenceOneScore = Math.abs(friends[i].scores[j] - newFriend.scores[j]);
+                totalDifference += differenceOneScore;
+            }
 
-app.get("/api/friends", function(req, res) {
-    
-    return res.json(johnny);
-  });
+            if (totalDifference < bestMatchDifference) {
+                bestMatchIndex = i;
+                bestMatchDifference = totalDifference;
+            }
+        }
 
-  //app.post("/peter", function(req, res) {
-    //res.send("call the police");
-  
-  //});
+        bestMatch = friends[bestMatchIndex];
 
- 
-  //app.post("/peter", function(req, res) {
-    //res.send("Welcome to the Star Wars Page!");
-    //res.sendFile(path.join(__dirname, "../public/home.html"));
-  //});
-  
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-  
+        friends.push(newFriend);
+
+        res.json(bestMatch);
+
+        console.log(bestMatch);
+    });
+
+};
